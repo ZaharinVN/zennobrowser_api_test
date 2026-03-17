@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-03-17T16:58:44.168647100Z",
+  "totalTests": 4,
+  "tests": [
+    {
+      "name": "GET /workspaces",
+      "endpoint": "/workspaces?start\u003d0\u0026total\u003d10",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "responsePreview": "{\"totalCount\":1,\"items\":[{\"workspaceId\":6147,\"name\":\"Default\",\"role\":\"Owner\"}]}"
+    },
+    {
+      "name": "POST /profile_folders",
+      "endpoint": "/profile_folders?name\u003dTest_336d12de\u0026workspaceId\u003d-1\u0026location\u003dLocal",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "responsePreview": "\"ab015e49-8732-4ca7-8c30-8507e271fc1a\""
+    },
+    {
+      "name": "POST /profiles/create (fixed)",
+      "endpoint": "/profiles/create?name\u003dTestProfile\u0026workspaceId\u003d-1\u0026screen\u003dauto\u0026cpu\u003dauto\u0026memory\u003dauto\u0026language\u003dauto\u0026timeZone\u003dauto\u0026webGl\u003dauto\u0026webRtc\u003dHide",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "responsePreview": "\"753ec56d-73c1-4fb7-b74b-701745525e52\""
+    },
+    {
+      "name": "GET /proxies",
+      "endpoint": "/proxies?workspaceId\u003d-1\u0026start\u003d0\u0026total\u003d5",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "responsePreview": "{\"totalCount\":0,\"items\":[]}"
+    }
+  ],
+  "passed": 4,
+  "failed": 0
+}
