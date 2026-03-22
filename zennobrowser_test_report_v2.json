@@ -1,0 +1,138 @@
+{
+  "title": "ZennoBrowser API Тестовый отчёт v2.0",
+  "timestamp": "2026-03-22T14:08:10.752452100Z",
+  "baseUrl": "http://localhost:8160/v1",
+  "totalTests": 18,
+  "tests": [
+    {
+      "name": "GET /workspaces",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "{\"totalCount\":1,\"items\":[{\"workspaceId\":6147,\"name\":\"Default\",\"role\":\"Owner\"}]}"
+    },
+    {
+      "name": "GET /profile_folders",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "{\"totalCount\":9,\"items\":[{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"Profiles without folder\",\"location\":\"Local\",\"quantity\":4},{\"id\":\"00000000-0000-0000-0000-000000000001\",\"name\":\"Cloud profiles without folder\",\"location\":\"Cloud\",\"quantity\":1},{\"id\":\"b565a309-a3c2-4ba2-8499-6e4ca52371e6\",\"n..."
+    },
+    {
+      "name": "POST /profile_folders CREATE",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "\"0c7a3d48-ecaa-40b7-a3e2-b33caaae714e\""
+    },
+    {
+      "name": "PUT /profile_folders/{id} UPDATE",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "\"0c7a3d48-ecaa-40b7-a3e2-b33caaae714e\""
+    },
+    {
+      "name": "GET /proxy_folders",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "{\"totalCount\":2,\"items\":[{\"id\":\"00000000-0000-0000-0000-000000000000\",\"name\":\"Local proxies without folder\",\"location\":\"Local\",\"quantity\":0},{\"id\":\"00000000-0000-0000-0000-000000000001\",\"name\":\"Cloud proxies without folder\",\"location\":\"Cloud\",\"quantity\":0}]}"
+    },
+    {
+      "name": "POST /proxy_folders CREATE",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "\"e2540469-a151-4bd8-8f79-8ff9f97dc0ac\""
+    },
+    {
+      "name": "GET /proxies",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "{\"totalCount\":0,\"items\":[]}"
+    },
+    {
+      "name": "POST /proxies/create",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "\"65f1364e-a8c2-4daa-b5e5-d84ce5a39b69\""
+    },
+    {
+      "name": "GET /profiles",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "{\"totalCount\":5,\"items\":[{\"id\":\"22481980-0654-4fca-9741-1d1c9a4e5d97\",\"name\":\"UserArea2\",\"folderId\":\"00000000-0000-0000-0000-000000000001\",\"creationTime\":\"2026-03-17T16:38:40.3851682+00:00\",\"user\":{\"sex\":\"Male\",\"name\":\"Ken\",\"surname\":\"Herrin\",\"age\":23,\"country\":\"USA\"},\"browser\":{\"operationSystem\":{\"..."
+    },
+    {
+      "name": "POST /profiles/create SINGLE",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "\"e126bd23-29e7-4f02-a44d-cf0eb5f82bec\""
+    },
+    {
+      "name": "POST /profiles/create_bulk",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "[\"af066bb4-dae2-40ea-bf3d-d472fda9ef6a\",\"ef8747da-7624-4a10-b9fc-184a508cef32\"]"
+    },
+    {
+      "name": "GET /threads",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "{\"totalCount\":0,\"items\":[]}"
+    },
+    {
+      "name": "POST /threads/create SINGLE",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "{\"workspaceId\":6147,\"threadToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjA4ZTk0Y2RjLTg5NzItNDk3My04ZmUxLWFkMzgzMmUxZjQ4NSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUi..."
+    },
+    {
+      "name": "PUT /threads/use/{token}",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "{\"workspaceId\":6147,\"threadToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjA4ZTk0Y2RjLTg5NzItNDk3My04ZmUxLWFkMzgzMmUxZjQ4NSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUi..."
+    },
+    {
+      "name": "POST /threads/create_bulk",
+      "expected": 200,
+      "actual": 500,
+      "passed": false,
+      "response": "{\"message\":\"Failed to create execution thread\"}"
+    },
+    {
+      "name": "GET /browser_instances",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "response": "{\"totalCount\":0,\"items\":[]}"
+    },
+    {
+      "name": "POST /browser_instances/create SINGLE",
+      "expected": 200,
+      "actual": 500,
+      "passed": false,
+      "response": "{\"message\":\"Cannot start browser with profile [e126bd23-29e7-4f02-a44d-cf0eb5f82bec] because thread limits have been reached for workspace 6147.\"}"
+    },
+    {
+      "name": "GLOBAL",
+      "expected": 200,
+      "actual": 500,
+      "passed": false,
+      "response": "timeout"
+    }
+  ],
+  "passed": 15,
+  "failed": 3,
+  "successRate": "83,3%",
+  "conclusion": "Обнаружены проблемы в 3 тестах."
+}

@@ -1,40 +1,165 @@
 {
-  "timestamp": "2026-03-17T16:58:44.168647100Z",
-  "totalTests": 4,
+  "title": "ZennoBrowser API Test Report v2",
+  "generatedAt": "2026-03-22T14:04:37.841295200Z",
+  "baseUrl": "http://localhost:8160/v1",
+  "totalTests": 22,
   "tests": [
     {
       "name": "GET /workspaces",
-      "endpoint": "/workspaces?start\u003d0\u0026total\u003d10",
-      "expected": 200,
-      "actual": 200,
-      "passed": true,
-      "responsePreview": "{\"totalCount\":1,\"items\":[{\"workspaceId\":6147,\"name\":\"Default\",\"role\":\"Owner\"}]}"
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "GET /profile_folders",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
     },
     {
       "name": "POST /profile_folders",
-      "endpoint": "/profile_folders?name\u003dTest_336d12de\u0026workspaceId\u003d-1\u0026location\u003dLocal",
-      "expected": 200,
-      "actual": 200,
-      "passed": true,
-      "responsePreview": "\"ab015e49-8732-4ca7-8c30-8507e271fc1a\""
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
     },
     {
-      "name": "POST /profiles/create (fixed)",
-      "endpoint": "/profiles/create?name\u003dTestProfile\u0026workspaceId\u003d-1\u0026screen\u003dauto\u0026cpu\u003dauto\u0026memory\u003dauto\u0026language\u003dauto\u0026timeZone\u003dauto\u0026webGl\u003dauto\u0026webRtc\u003dHide",
-      "expected": 200,
-      "actual": 200,
-      "passed": true,
-      "responsePreview": "\"753ec56d-73c1-4fb7-b74b-701745525e52\""
+      "name": "PUT /profile_folders/{id}",
+      "expectedStatus": 200,
+      "actualStatus": 404,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "GET /proxy_folders",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "POST /proxy_folders",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "PUT /proxy_folders/{id}",
+      "expectedStatus": 200,
+      "actualStatus": 404,
+      "passed": false,
+      "responsePreview": ""
     },
     {
       "name": "GET /proxies",
-      "endpoint": "/proxies?workspaceId\u003d-1\u0026start\u003d0\u0026total\u003d5",
-      "expected": 200,
-      "actual": 200,
-      "passed": true,
-      "responsePreview": "{\"totalCount\":0,\"items\":[]}"
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "POST /proxies/create",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "PUT /proxies/{id}",
+      "expectedStatus": 200,
+      "actualStatus": 404,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "GET /profiles",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "POST /profiles/create",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "PUT /profiles/{id}",
+      "expectedStatus": 200,
+      "actualStatus": 404,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "POST /profiles/create_bulk",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "GET /threads",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "POST /threads/create",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "POST /threads/create_bulk",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "PUT /threads/use/{threadToken}",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "DELETE /threads/{threadToken}",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "GET /browser_instances",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "POST /browser_instances/create",
+      "expectedStatus": 200,
+      "actualStatus": 401,
+      "passed": false,
+      "responsePreview": ""
+    },
+    {
+      "name": "GLOBAL",
+      "expectedStatus": 200,
+      "actualStatus": 500,
+      "passed": false,
+      "responsePreview": "java.lang.NullPointerException"
     }
   ],
-  "passed": 4,
-  "failed": 0
+  "passed": 0,
+  "failed": 22,
+  "conclusion": "Часть проверок завершилась с отклонениями. Требуется анализ ответов API и параметров запросов для проблемных методов."
 }
